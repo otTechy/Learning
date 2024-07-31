@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Examples of HTML Tags</title>
+	</head>
+
+	<body>
+
+		<h1>This is a top level header</h1>
+		<h2>This is a second level header</h2>
+		<h3>This is a third level header</h3>
+
+		<p>Here is a paragraph. You don't have to worry about where the line breaks, you just put everything you want inside the "p" tags and it will make a paragraph.</p>
+
+		<h2>Inline (Phrasing) Elements</h2>
+
+		<p>Inline elements are used inline within a block element, such a paragraph. For example, if you want some text to have extra weight, you might use a <strong>strong tag</strong>. Or if you want to emphasize text you might use an <em>em tag</em> for emphasis. The way these tags render by default is that strong makes text bold, and em makes text italic in the browser, but you can define how you want those to look with css.</p>
+
+		<p>HTML5 also resuscitates the old <b>for bold</b> and <i>for italic</i> tags. However these are used when you want to mark content for a specific meaning other than for strength or emphasis. For example, you might use the i tag for the title of a magazine article in a bibliography. In that case you are not trying to emphasize the title of the magazine, but rather format the content in a particular way.</p> 
+
+		<p>Another inline, phrasing element is the anchor tag. The anchor tag is the glue that holds the World Wide Web together. The anchor tag is how you link to other pages. It looks like this: <a href="http://google.com">link to Google</a> Notice the href attribute. Like all attributes it has the name of the attribute followed by an equal sign, followed by the value of the attribute in quotes. This attribute gives the tag more information. What am I linking to? I am linking to the Google website.</p>
+
+		<p>Another inline element is the image element. It looks like this <img src="http://meadpoint.net/cat.jpg">. Notice this element has no closing tag. However it does have an attribute. Actually, an image tag is required to have two attributes, like this: <img src="http://meadpoint.net/cat.jpg" alt="cat photo"> The second attribute is the alternative text attribute. It is used by screen readers for people with visual disabilities, and is required by the html specification to be included with the image. The value of the alt attribute should tell us what it is a picture of.</p>
+
+		<p>Note that the order of attributes does not matter. This: <img src="http://meadpoint.net/cat.jpg" alt="cat photo"> and this: <img alt="cat photo" src="http://meadpoint.net/cat.jpg"> are actually the same and both are fine.</p>
+
+		<h2>The Break Tag</h2>
+
+		<p>The break tag is used if you want lines of text to break in a specific place,<br> like if you are marking up a poem,<br> where the line endings matter. Notice, I don't have to actually put returns in my code to make these break tags work,<br> but I could if I wanted to. <br>The browser does not care. Like the image tag, the break tag has no closing tag.</p>
+
+		<h2>Using Lists</h2>
+
+		<p>There are a few different ways to do lists in HTML. The most common one is the unordered list, but sometimes you will use an ordered list. Occasionally you might see a definition list, but I won't demonstrate that here, since it is pretty rare. Here is how you mark up a list...</p>
+
+		<ul>
+			<li>This is a list item</li>
+			<li>Here is another list item</li>
+			<li>The ul tag above says that this is an unordered list</li>
+			<li>With css you can do a lot to make unordered lists display in lots of different ways</li>
+		</ul>
+
+		<ol>
+			<li>Here is a list item in an ordered list</li>
+			<li>Here is another list item</li>
+			<li>Here is a third item</li>
+			<li>Notice in both cases, the list items are completely enclosed inside the ul or ol tags.</li>
+		</ol>
+
+		<ul>
+			<li>Here is a list item again</li>
+			<li>This list item is going to contain a list
+				<ul>
+					<li>This list is inside the list item above</li>
+					<li>Notice the entire second list is inside the li element for the top level list</li>
+					<li>Last sub item</li>
+				</ul>
+			</li>
+			<li>Notice the closing li tag above is closing the list item that contains the sub list</li>
+		</ul>
+
+		<h2>Working with Tables</h2>
+
+		<p>Tables are used for tabular data. There are tags for the table itself, tags for each row, and tags for each cell. There are also tags for header rows, which could be defined to have a different look in CSS. Let's look at an example table...</p>
+
+		<!--
+
+		This is how you make a comment in html. This text will not be rendered by the web browser. 
+
+		Below, I have added border="1" as an attribute on the table. This is not the proper way to 
+		add borders. Really they should be done in CSS, but since you have not learned CSS yet,
+		I put it in there so you can at least see the different cells.
+
+		-->
+
+		<table border="1">
+			<tr>
+				<th>Products</th>
+				<th>Beginning</th>
+				<th>Intermediate</th>
+				<th>Advanced</th>
+			</tr>
+
+			<tr>
+				<td>Product 1</td>
+				<td>$10/month</td>
+				<td>$12/month</td>
+				<td>$15/month</td>
+			</tr>
+
+			<tr>
+				<td>Product 2</td>
+				<td>$15/month</td>
+				<td>$17/month</td>
+				<td>$20/month</td>
+			</tr>
+
+			<tr>
+				<td>Product 3</td>
+				<td>$20/month</td>
+				<td>$22/month</td>
+				<td>$25/month</td>
+			</tr>
+
+		</table>
+
+		<p>Notice I put a border attribute on the table. I did this just so that if you look at this page in the browser you will be able to see the different cells. However, you should not use this attribute in your code. Anything that describes how the table LOOKS will be done in CSS. This is true for all the HTML on this page. We will do all the visual look of all elements in CSS. The browser provides it's own built in stylesheet to give some look to the file, but we will override that and provide our own look later. HTML has a lot of attributes that you can use but should not. Browsers will render them, but in the long run, it is way better to anything that affects the look of the page in CSS, because your pages will be easy to edit later if they are not mucked up with a bunch of extra markup.</p>
+
+		<h2>Generic Tags and HTML5 tags</h2>
+
+		<p>I mentioned inline tags earlier. All tags either display as inline (phrasing) elements or block (structural) elements. By block elements I mean by default, the browser will create a new block on the page, with some amount of space before the block, and some amount of space after for what ever content comes before or after. How much space can be defined with CSS. Some of the block elements we have looked at already are the P tag, the H tags and the unordered and ordered list tags, as well as the list item tags. The table tag is a block element.</p>
+
+		<p>Inline elements display inline with the res of the page. For example, the strong tag will make text strong inline with a paragraph. The anchor tag is an inline element by default. So are images, which is often problematic. You can make an inline element display like a block element and vice versa with CSS. We will do that frequently, as you will see later, but for now, it is important to know which is which by default.</p>
+
+		<p>There are generic block and inline elements, used for layout purposes. They are div and span respectively, and look like this...</p>
+
+		<div>This is a generic division for a document. It will make a generic block element.</div>
+
+		<div><p>Here is a div block with a paragraph block inside it. This paragraph has a <span>span</span> inside it. The span tag is a generic inline element and can be used in combination with css to define a look for anything between the span tags. You probably won't use span a lot, but you will use the div tag from time to time. You use the div tag less now because there are some nice HTML5 block level tags that replace a lot of div tags that we used to use. Here are some you might see...</p></div>
+
+		<header>Header is a generic block element that is used to describe the header of a page or article or section. You would use it in place of a div tag. The word, "header" has meaning and helps us understand that the content inside the header has some importance as the beginning of something.</header>
+
+		<section>The section tag is used to denote a section of a document. A section could have other blocks inside of it, or it could be inside of other blocks.</section>
+
+		<article>Article is another block element that helps give our document definition. An article could have sections, or a section could have articles. Think about a newspaper. Perhaps you are in the sports section, and there are several articles. Or perhaps you are reading a long article, and it is broken into different sections. The important thing here is to think about your content and how it breaks down structurally.</article>
+
+		<aside>The aside element is another block element used to describe separate but related content, like a sidebar.</aside>
+
+		<p>You will notice that if you look at this page in a web browser, you can not see the difference between any of these different block elements. The point is that they add structure to your document so that Google and other devices can make sense of them. This helps search engines understand your pages and index them properly. It helps when you need to edit the page later. Part of our job is to give our documents a logical structure so that they make sense. With CSS we can define any of these elements to look any way we want, and we will start doing that soon.</p>
+
+		<p>This is not all of the elements, but this is a good chunk of them, and it is the ones you will use most frequently. The elements that are most notably missing are elements used for forms, but we will get to those later. For now, practice working with these tags and marking up the example documents. Use this document as a guide. Be certain to close tags that need to be closed and to type them correctly. Be certain to use attributes correctly. You can always go to the <a href="http://www.w3schools.com">W3Schools site</a> to get more information on the tags.</p>
+
+	</body>
+</html>
