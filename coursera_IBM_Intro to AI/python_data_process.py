@@ -7,7 +7,7 @@ async def download(url, filename):
     if response.status == 200:
         with open(filename, "wb") as f:
             f.write(await response.bytes())
-await download(filename, "example1.txt")
+await download(filename, "example1.txt")  # noqa: F704
 print("done")
 
 
