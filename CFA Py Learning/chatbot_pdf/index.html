@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Chatbot UI</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f4f4f4; }
+        .container { background: #fff; padding: 30px; border-radius: 8px; max-width: 500px; margin: auto; box-shadow: 0 2px 8px #ccc; }
+        h2 { text-align: center; }
+        .output { margin-top: 20px; background: #e9ecef; padding: 15px; border-radius: 5px; }
+        .key-term { display: inline-block; background: #007bff; color: #fff; padding: 5px 10px; border-radius: 3px; margin: 3px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>PDF Chatbot: Extract Key Terms</h2>
+        <form id="uploadForm">
+            <input type="file" id="pdfFile" accept="application/pdf" required />
+            <button type="submit">Upload & Extract</button>
+        </form>
+        <div class="output" id="output"></div>
+    </div>
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const fileInput = document.getElementById('pdfFile');
+            const output = document.getElementById('output');
+            if (!fileInput.files.length) return;
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+            output.innerHTML = 'Uploading and extracting...';
+            try {
+                const res = await fetch('http://localhost:5000/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await res.json();
+                if (data.key_terms) {
+                    output.innerHTML = '<b>Key Terms:</b><br>' + data.key_terms.map(term => `<span class="key-term">${term}</span>`).join(' ');
+                } else {
+                    output.innerHTML = 'No key terms found.';
+                }
+            } catch (err) {
+                output.innerHTML = 'Error: ' + err;
+            }
+        });
+    </script>
+</body>
+</html>

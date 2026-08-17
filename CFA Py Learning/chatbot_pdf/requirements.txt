@@ -1,0 +1,7 @@
+chainlit
+langchain
+llama-cpp-python
+pypdf
+fastapi
+uvicorn
+python-multipart

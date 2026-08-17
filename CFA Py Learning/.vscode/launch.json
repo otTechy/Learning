@@ -1,0 +1,40 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    "version": "0.2.0",
+    "configurations": [
+        // {
+        //     "name": "Python: ETF Portfolio Script",
+        //     "type": "python",
+        //     "request": "launch",
+        //     "program": "${workspaceFolder}/Idea/bbg_etf_portfolio.py",
+        //     "console": "integratedTerminal"
+        // },
+        {
+            "name": "Python: ETF2 Script (Args)",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/Idea/etf2.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--tickers", "SPY,VXUS,QQQ,SCHD,VIG,AGG,TIP,HYG,VNQ,GLD,BOTZ,SMH",
+                "--weights", "0.20,0.15,0.10,0.10,0.05,0.10,0.05,0.05,0.05,0.03,0.07,0.05",
+                "--benchmarks", "SPMARC5P Index,SPXFRRE7 Index,SPX Index",
+                "--start_date", "2019-01-01",
+                "--end_date", "2025-07-01"
+            ]
+        },
+        {
+            "name": "Python: AI Signal Script",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/Idea/ai_signal.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--tickers", "SPY,QQQ",
+                "--start_date", "2019-01-01",
+                "--end_date", "2025-07-01"
+            ]
+        }
+    ]
+}

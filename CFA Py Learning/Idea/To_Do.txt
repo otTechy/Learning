@@ -1,0 +1,5 @@
+1. etf2
+    - change risk free rate to based on sofr, as of end date
+    - check calculation for return
+    - check calc for risk measure
+    - learn how the code works, why has main and what main do

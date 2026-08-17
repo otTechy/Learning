@@ -1,0 +1,43 @@
+{
+    "sql": {
+        "server": "SBDTFODBPRODReadOnly",
+        "database": "zen",
+        "schema": "dbo",
+        "table": "dailydata",
+        "driver": "ODBC Driver 17 for SQL Server",
+        "encrypt": "yes",
+        "trust_server_certificate": "yes",
+        "login_timeout": 30,
+        "connect_timeout": 30,
+        "max_retries": 2
+    },
+    "email": {
+        "smtp_server": "smtprelay.eldridge.com",
+        "smtp_port": 25,
+        "sender": "shujing.purcell@eldridge.com",
+        "username": "shujing.purcell@eldridge.com",
+        "password": "Better2025",
+        "recipient_groups": {
+            "DDA": [
+                "shujing.purcell@eldridge.com",
+                "ecmderivativesdataanalytics@eldridge.com"],
+            "trading1": ["yiming.hong@eldridge.com"],
+            "trading2": ["jacek.trzepla@eldridge.com","jacob.steen@eldridge.com"]
+            
+        }
+    },
+    "checks": {
+        "sofr_funding": {
+            "description": "SOFR Funding Rates (Bond Fwd Valuation)",
+            "ticker_like": "sofr_funding%",
+            "stale_days": 7,
+            "email_recipient_group": ["trading2","DDA"]
+        },
+        "cft": {
+            "description": "SPX CFT Rates",
+            "ticker_like": "SPX_CFT%",
+            "stale_days": 7,
+            "email_recipient_group": ["trading1","DDA"]
+        }
+    }
+}
